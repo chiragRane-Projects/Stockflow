@@ -22,12 +22,19 @@ export function AuthProvider({ children }) {
         }
     };
 
+    const logout = async() => {
+        await fetch("/api/auth/logout",
+            {method: 'POST'}
+        );
+        setUser(null);
+    };
+
     useEffect(() => {
         fetchUser();
     }, []);
 
     return(
-        <AuthContext.Provider value={{user, setUser, loading, fetchUser}}>
+        <AuthContext.Provider value={{user, setUser, loading, fetchUser, logout}}>
             {children}
         </AuthContext.Provider>
     )
