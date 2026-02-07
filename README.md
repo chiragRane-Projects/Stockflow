@@ -36,9 +36,9 @@ npm run dev
 ---
 
 ## 🛠️ Developer Information
-Name: Chirag Vaibhav Rane
-Portfolio: [link](https://chirag-v-rane.vercel.app/)
-LinkedIn: [link](https://www.linkedin.com/in/chirag-v-rane/)
-X: [link](https://x.com/stackknight20)
+- Name: Chirag Vaibhav Rane
+- Portfolio: [link](https://chirag-v-rane.vercel.app/)
+- LinkedIn: [link](https://www.linkedin.com/in/chirag-v-rane/)
+- X: [link](https://x.com/stackknight20)
 
 ---
