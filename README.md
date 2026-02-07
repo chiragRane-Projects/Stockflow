@@ -2,6 +2,7 @@
 Stockflow is an inventory management platform built for small sized grocery shops which can help the owners to manage sales, stocks efficiently.
 The main purpose to build this project is to revise my basics on full stack development. 
 
+- Live Preview: [Preview](https://stockflow-au.vercel.app/)
 ---
 
 ## < / > Techstack
@@ -36,9 +37,9 @@ npm run dev
 ---
 
 ## 🛠️ Developer Information
-- Name: Chirag Vaibhav Rane
-- Portfolio: [link](https://chirag-v-rane.vercel.app/)
-- LinkedIn: [link](https://www.linkedin.com/in/chirag-v-rane/)
-- X: [link](https://x.com/stackknight20)
+- Name: <p font="bold">Chirag Vaibhav Rane</p>
+- Portfolio: [Portfolio link](https://chirag-v-rane.vercel.app/)
+- LinkedIn: [Linkedin link](https://www.linkedin.com/in/chirag-v-rane/)
+- X: [X link](https://x.com/stackknight20)
 
 ---
