@@ -24,7 +24,7 @@ export async function POST(req) {
             role
         });
 
-        return NextResponse.json({message: "New user created", userId: newUser._id}, {status:201});
+        return NextResponse.json({message: "New user created", user:newUser}, {status:201});
     } catch (error) {
         return NextResponse.json({message: "Internal server error", error}, {status: 500})
     }
