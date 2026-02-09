@@ -38,7 +38,7 @@ export default function AdminLayout({ children }) {
     }
     return (
         <>
-            <div className={outfit.className}>
+            <div className={`${outfit.className} scroll-smooth`} >
                 <SidebarProvider>
                     <AppSidebar />
                     <SidebarInset>
