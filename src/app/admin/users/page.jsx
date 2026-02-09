@@ -2,7 +2,7 @@
 import { Table, TableBody, TableCell, TableRow, TableHeader, TableHead } from "@/components/ui/table";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { getUsers, deleteUser } from "@/services/userService";
+import { getUsers, deleteUser } from "@/services/api/userService";
 import { Trash } from "lucide-react";
 import CreateUserModal from "@/components/users/CreateUserModal";
 import { useAuth } from "@/context/AuthContext";
@@ -77,7 +77,7 @@ export default function Users() {
                             <TableCell className={"capitalize"}>{user.role}</TableCell>
                             <TableCell>
                                 <button onClick={() => handleDelete(user._id)} className="cursor-pointer bg-transparent p-2 rounded-full border border-red-600">
-                                    <Trash size={20} />
+                                    <Trash size={15} />
                                 </button>
                             </TableCell>
                         </TableRow>
