@@ -1,7 +1,6 @@
 import Inventory from "@/models/Inventory";
 import { NextResponse } from "next/server";
 import { connectToDb } from "@/utils/db";
-import { calculateInventoryTotalPrice } from "@/services/inventoryServices/calculateTotalPrice";
 
 export async function GET(){
     try {
@@ -25,14 +24,11 @@ export async function POST(req) {
 
         const{name, category, quantity, pricePerQuantity, reorderThreshold} = await req.json();
 
-        const finalPrice = calculateInventoryTotalPrice(quantity, pricePerQuantity);
-
         const newStock = await Inventory.create({
             name,
             category,
             quantity,
             pricePerQuantity,
-            totalPrice: finalPrice,
             reorderThreshold
         });
 

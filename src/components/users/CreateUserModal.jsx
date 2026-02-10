@@ -5,7 +5,7 @@ import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { useState } from "react"
 import { toast } from "sonner"
-import { createUser } from "@/services/api/userService"
+import { createUser } from "@/services/userService"
 
 export default function CreateUserModal({ onCreated }) {
     const [open, setOpen] = useState(false);

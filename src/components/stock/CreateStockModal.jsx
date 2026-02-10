@@ -1,9 +1,9 @@
 "use client"
 import { useState } from "react"
-import { Dialog, DialogClose, DialogContent, DialogTrigger, DialogTitle, DialogFooter, DialogHeader } from "../ui/dialog"
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogFooter, DialogHeader } from "../ui/dialog"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
-import { createInventory } from "@/services/api/stockService"
+import { createInventory } from "@/services/stockService"
 import { toast } from "sonner"
 import { Button } from "../ui/button"
 
@@ -26,6 +26,7 @@ export default function CreateStockModal({ onCreated }) {
 
         try {
             const data = await createInventory(form);
+            console.log(data);
             toast.success("Inventory created");
 
             onCreated(data.stock);
@@ -39,7 +40,7 @@ export default function CreateStockModal({ onCreated }) {
                 reorderThreshold: ""
             })
         } catch (error) {
-            console.error(error);
+            console.log(error);
             toast.error("Failed to create inventory");
         } finally{
             setLoading(false)

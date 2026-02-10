@@ -35,8 +35,6 @@ export async function PATCH(req, { params }) {
     if (body.reorderThreshold !== undefined)
       stock.reorderThreshold = Number(body.reorderThreshold);
 
-    stock.totalPrice = stock.quantity * stock.pricePerQuantity;
-
     await stock.save();
 
     return NextResponse.json({ message: "Stock updated", stock });

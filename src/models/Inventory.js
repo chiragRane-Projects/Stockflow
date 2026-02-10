@@ -5,7 +5,6 @@ const invSchema = new mongoose.Schema({
     category: {type: String, required: true},
     quantity: {type: Number, required: true},
     pricePerQuantity: {type: Number, required: true},
-    totalPrice: {type: Number, required: true},
     reorderThreshold: {type: Number, required: true}
 }, {timestamps: true});
 

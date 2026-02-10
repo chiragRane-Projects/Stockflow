@@ -1,9 +1,9 @@
 "use client"
 import { Table, TableBody, TableCell, TableHeader, TableHead, TableRow } from "@/components/ui/table"
-import { Trash2, Pencil } from "lucide-react"
+import { Trash2 } from "lucide-react"
 import { useAuth } from "@/context/AuthContext"
 import { useState, useEffect } from "react"
-import { getStock, deleteInventory } from "@/services/api/stockService"
+import { getStock, deleteInventory } from "@/services/stockService"
 import { toast } from "sonner"
 import CreateStockModal from "@/components/stock/CreateStockModal"
 import UpdateStockModal from "@/components/stock/UpdateStockModal"
@@ -75,7 +75,7 @@ export default function Inventory() {
                             <TableCell className={"capitalize text-center"}>{stock.category}</TableCell>
                             <TableCell className={"text-center"}>{stock.quantity}</TableCell>
                             <TableCell className={"text-center"}>{stock.pricePerQuantity}</TableCell>
-                            <TableCell className={"text-center"}>{stock.totalPrice}</TableCell>
+                            <TableCell className={"text-center"}>{stock.quantity * stock.pricePerQuantity}</TableCell>
                             <TableCell className={"text-center"}>{stock.reorderThreshold}</TableCell>
                             {isOwner && (
                                 <TableCell className={"flex flex-row gap-2 justify-center items-center"}>

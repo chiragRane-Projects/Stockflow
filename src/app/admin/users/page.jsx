@@ -2,7 +2,7 @@
 import { Table, TableBody, TableCell, TableRow, TableHeader, TableHead } from "@/components/ui/table";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { getUsers, deleteUser } from "@/services/api/userService";
+import { getUsers, deleteUser } from "@/services/userService";
 import { Trash } from "lucide-react";
 import CreateUserModal from "@/components/users/CreateUserModal";
 import { useAuth } from "@/context/AuthContext";
