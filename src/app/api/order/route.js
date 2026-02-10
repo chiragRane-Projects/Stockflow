@@ -32,7 +32,7 @@ export async function POST(req) {
     try {
         await connectToDb();
 
-        const { customerName, items, modeOfPayment, paymentStatus } = await req.json();
+        const {  items, modeOfPayment, paymentStatus } = await req.json();
 
         const orderItems = [];
         let totalAmount = 0;
@@ -76,7 +76,6 @@ export async function POST(req) {
         }
 
         const newOrder = await Order.create({
-            customerName,
             items: orderItems,
             total: totalAmount,
             modeOfPayment,

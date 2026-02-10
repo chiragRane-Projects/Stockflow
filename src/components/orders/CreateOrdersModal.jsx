@@ -17,7 +17,7 @@ export default function CreateOrdersModal({ onCreated }) {
     const [stocks, setStocks] = useState([]);
     const [items, setItems] = useState([{ productId: "", quantity: "" }]);
     const [form, setForm] = useState({
-        customerName: "",
+        customerName: "NA",
         modeOfPayment: "",
         paymentStatus: ""
     });
@@ -62,7 +62,7 @@ export default function CreateOrdersModal({ onCreated }) {
             onCreated(data.order);
             setOpen(false);
             setItems([{ productId: "", quantity: "" }]);
-            setForm({ customerName: "", modeOfPayment: "", paymentStatus: "" });
+            setForm({ customerName: "NA", modeOfPayment: "", paymentStatus: "" });
         } catch (error) {
             console.error("Order creation error:", error);
             toast.error(error.message || "Failed to create order");
@@ -98,7 +98,7 @@ export default function CreateOrdersModal({ onCreated }) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <Label>Customer Name</Label>
-                        <Input value={form.customerName} onChange={(e) => setForm(prev => ({ ...prev, customerName: e.target.value }))} required />
+                        <Input value={form.customerName} onChange={(e) => setForm(prev => ({ ...prev, customerName: e.target.value }))} />
                     </div>
 
                     <div className="space-y-3">

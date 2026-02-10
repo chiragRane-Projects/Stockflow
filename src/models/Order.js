@@ -7,7 +7,7 @@ const orderItemSchema = new mongoose.Schema({
 });
 
 const orderSchema = new mongoose.Schema({
-    customerName: {type: String, required: true},
+    customerName: {type: String},
     items: [orderItemSchema],
     total: {type: Number, required: true},
     modeOfPayment: {type: String, enum: ["cash", "upi"], required: true},
