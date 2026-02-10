@@ -13,7 +13,7 @@ export default function Inventory() {
     const [loading, setLoading] = useState(true);
     const { user } = useAuth();
 
-    const isOwner = user.role === "owner";
+    const isOwner = user?.role === "owner";
 
     useEffect(() => {
         fetchStock()
