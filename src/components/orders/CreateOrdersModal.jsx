@@ -14,7 +14,7 @@ import { AlertCircle } from "lucide-react"
 
 export default function CreateOrdersModal({ onCreated }) {
     const [open, setOpen] = useState(false);
-    const [stocks, setStocks] = useState([]);
+    const [inventory, setStocks] = useState([]);
     const [items, setItems] = useState([{ productId: "", quantity: "" }]);
     const [form, setForm] = useState({
         customerName: "NA",
@@ -31,8 +31,8 @@ export default function CreateOrdersModal({ onCreated }) {
     const fetchStocks = async () => {
         try {
             const data = await getStock();
-            setStocks(data.stocks);
-            checkLowStock(data.stocks);
+            setStocks(data.inventory);
+            checkLowStock(data.inventory);
         } catch (error) {
             toast.error("Failed to fetch stocks");
         }
@@ -117,9 +117,9 @@ export default function CreateOrdersModal({ onCreated }) {
                                             <SelectValue placeholder="Select product" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            {stocks.map(stock => (
-                                                <SelectItem key={stock._id} value={stock._id} disabled={stock.quantity === 0}>
-                                                    {stock.name} {stock.quantity === 0 ? "(Out of Stock)" : ""}
+                                            {inventory.map(inv => (
+                                                <SelectItem key={inv._id} value={inv._id} disabled={inv.quantity === 0}>
+                                                    {inv.name} {inv.quantity === 0 ? "(Out of Stock)" : ""}
                                                 </SelectItem>
                                             ))}
                                         </SelectContent>

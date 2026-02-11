@@ -3,7 +3,8 @@ export async function getStock() {
 
     if (!res.ok) throw new Error("Failed to fetch stocks");
 
-    return res.json();
+    const data = await res.json();
+    return { inventory: data.stocks || [] };
 }
 
 export async function createInventory(payload) {

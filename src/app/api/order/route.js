@@ -2,12 +2,8 @@ import Order from "@/models/Order";
 import { connectToDb } from "@/utils/db";
 import { NextResponse } from "next/server";
 import Inventory from "@/models/Inventory";
-import { requireRole, verifyToken } from "@/utils/authMiddleware";
 
-export async function GET(req) {
-    const roleCheck = requireRole(req, ["owner"]);
-    if (roleCheck) return roleCheck;
-
+export async function GET() {
     try {
         await connectToDb();
 
@@ -24,15 +20,10 @@ export async function GET(req) {
 }
 
 export async function POST(req) {
-    const user = verifyToken(req);
-    if (!user) {
-        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
     try {
         await connectToDb();
 
-        const {  items, modeOfPayment, paymentStatus } = await req.json();
+        const { customerName, items, modeOfPayment, paymentStatus } = await req.json();
 
         const orderItems = [];
         let totalAmount = 0;
@@ -76,6 +67,7 @@ export async function POST(req) {
         }
 
         const newOrder = await Order.create({
+            customerName,
             items: orderItems,
             total: totalAmount,
             modeOfPayment,

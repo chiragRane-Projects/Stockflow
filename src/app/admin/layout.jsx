@@ -5,6 +5,7 @@ import { Outfit } from "next/font/google"
 import { useAuth } from "@/context/AuthContext"
 import { useEffect } from "react"
 import { usePathname, useRouter } from "next/navigation"
+import NotificationPanel from "@/components/layout/NotificationPanel"
 
 const outfit = Outfit({
     variable: "--font-geist-sans",
@@ -42,8 +43,9 @@ export default function AdminLayout({ children }) {
                 <SidebarProvider>
                     <AppSidebar />
                     <SidebarInset>
-                        <header className="flex items-center border-b px-4 h-11">
+                        <header className="flex justify-between items-center border-b px-4 h-11">
                             <SidebarTrigger/>
+                            <NotificationPanel/>
                         </header>
 
                         <div className="p-5">

@@ -71,30 +71,46 @@ export default function LoginPage() {
               </CardTitle>
 
               <form className="space-y-5" onSubmit={handleLogin}>
-                <div className="space-y-2">
-                  <Label>Username</Label>
-                  <Input placeholder="enter username" value={username} onChange={(e) => setUsername(e.target.value)} />
+
+
+                <div className="flex flex-col gap-5 p-5 bg-zinc-100 rounded-md">
+                  <div className="flex flex-col p-0">
+                    <p className="font-medium text-lg">- Test credentials(Owner)</p>
+                    <p>username: testowner</p>
+                    <p>password: owner123</p>
+                  </div>
+
+                   <div className="flex flex-col p-0">
+                    <p className="font-medium text-lg">- Test credentials(Staff)</p>
+                    <p>username: teststaff</p>
+                    <p>password: staff123</p>
+                  </div>
                 </div>
 
-                <div className="space-y-2 relative">
-                  <Label>Password</Label>
-                  <Input type={hidePassword ? "password" : "text"} placeholder="enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <div className="space-y-2">
+                <Label>Username</Label>
+                <Input placeholder="enter username" value={username} onChange={(e) => setUsername(e.target.value)} />
+              </div>
 
-                  <button type="button" onClick={() => setHidePassword(!hidePassword)}
-                    className="absolute right-3 top-9 text-muted-foreground"
-                  >
-                    {hidePassword ? <EyeIcon size={18} /> : <EyeOff size={18} />}
-                  </button>
-                </div>
+              <div className="space-y-2 relative">
+                <Label>Password</Label>
+                <Input type={hidePassword ? "password" : "text"} placeholder="enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <Button type="submit" className="w-full" >
-                  <p>Login</p>
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </aside>
-      </main>
+                <button type="button" onClick={() => setHidePassword(!hidePassword)}
+                  className="absolute right-3 top-9 text-muted-foreground"
+                >
+                  {hidePassword ? <EyeIcon size={18} /> : <EyeOff size={18} />}
+                </button>
+              </div>
+
+              <Button type="submit" className="w-full" >
+                <p>Login</p>
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </aside>
+    </main >
     </>
   )
 }

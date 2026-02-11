@@ -26,9 +26,7 @@ export default function CreateStockModal({ onCreated }) {
 
         try {
             const data = await createInventory(form);
-            console.log(data);
             toast.success("Inventory created");
-
             onCreated(data.stock);
             setOpen(false);
 
